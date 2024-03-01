@@ -91,99 +91,41 @@ export default {
 </script>
 
 <template>
-  <div class="vd-row">
-    <div class="vd-col vd-col-left">
+  <div class="min-h-screen overflow-hidden grid grid-cols-2">
+    <div
+      class="bg-[url('/images/marisol-benitez-QvkAQTNj4zk-unsplash.jpg')] bg-no-repeat bg-center bg-cover grid place-content-center"
+    >
       <AuthLeft />
     </div>
-    <div class="vd-col vd-col-right">
+    <div class="grid place-content-center bg-white">
       <div>
-        <div className="title title1">Welcome to VegiDeals</div>
-        <div className="title title2">We make you smart</div>
+        <h3 className=" text-gray-700 text-2xl font-bold">Welcome to VegiDeals</h3>
+        <div className="text-gray-600 text-lg mb-3">We make you smart</div>
         <form className="form" @submit.prevent="onClickCreateAccount">
-          <div>
-            <FormInput v-model="firstName" placeholder="First Name" id="firstName" type="text" />
-          </div>
-          <div>
-            <FormInput v-model="lastName" placeholder="Last Name" id="lastName" type="text" />
-          </div>
-          <div>
-            <FormInput v-model="mobile" placeholder="Mobile" id="mobile" type="tel" number />
-          </div>
-          <div>
-            <FormInput v-model="branch" placeholder="Branch" id="branch" type="text" />
-          </div>
-          <div>
-            <FormInput v-model="pw" placeholder="Password" id="password" type="password" />
-          </div>
+          <FormInput v-model="firstName" placeholder="First Name" id="firstName" type="text" />
+          <FormInput v-model="lastName" placeholder="Last Name" id="lastName" type="text" />
 
-          <button className="btn submit-btn vd-hover-pointer" type="submit">Create Account</button>
+          <FormInput v-model="mobile" placeholder="Mobile" id="mobile" type="tel" number />
+
+          <FormInput v-model="branch" placeholder="Branch" id="branch" type="text" />
+
+          <FormInput v-model="pw" placeholder="Password" id="password" type="password" />
+
+          <button
+            className="px-3 py-2 text-medium font-medium text-center w-full  text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            type="submit"
+          >
+            Create Account
+          </button>
         </form>
       </div>
 
-      <button @click.prevent="onClickLogin" className="btn create-new-btn vd-hover-pointer">
+      <button
+        @click.prevent="onClickLogin"
+        className="absolute bottom-6 right-6 px-3 py-2 text-medium font-medium text-center  text-green-600 rounded-lg focus:ring-2 focus:outline-none bg-green-50  hover:bg-green-100 focus:ring-green-200"
+      >
         Log In
       </button>
     </div>
   </div>
 </template>
-
-<style scoped>
-.vd-row {
-  display: flex;
-}
-.vd-col {
-  width: 50%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.vd-col-left {
-  background-image: url('images/marisol-benitez-QvkAQTNj4zk-unsplash.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  mix-blend-mode: darken;
-  height: 50vh;
-  overflow: hidden;
-}
-.vd-col-right {
-  background-color: #554c4c;
-}
-
-.title {
-  color: #fff;
-}
-
-.title1 {
-  font-weight: 900;
-  margin-bottom: 4px;
-  font-size: 25px;
-}
-.title2 {
-  font-size: 21px;
-  margin-bottom: 12px;
-}
-.btn {
-  padding: 0px 24px;
-  border-radius: 12px;
-  color: #ffffff;
-  height: 35px;
-  background-color: rgb(5, 199, 5);
-  border: none;
-}
-.btn:hover {
-  background-color: rgb(8, 155, 8);
-}
-
-.submit-btn {
-  width: 100%;
-}
-
-.create-new-btn {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
-}
-</style>
-../data/Data

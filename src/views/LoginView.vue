@@ -74,72 +74,28 @@ export default {
     >
       <AuthLeft />
     </div>
-    <div class="grid place-content-center bg-[#554c4c]">
+    <div class="grid place-content-center bg-white">
       <div>
-        <div className="title title1">Welcome to VegiDeals</div>
-        <div className="title title2">We make you smart</div>
+        <h3 className=" text-gray-700 text-2xl font-bold">Welcome to VegiDeals</h3>
+        <div className="text-gray-600 text-lg mb-3">We make you smart</div>
         <form className="form" @submit.prevent="onClickLogin" method="post">
-          <div>
-            <FormInput v-model="mobile" placeholder="Mobile" id="mobile" type="tel" number />
-          </div>
-          <div>
-            <FormInput v-model="pw" placeholder="Password" id="password" type="password" />
-          </div>
-          <button className="btn submit-btn vd-hover-pointer" type="submit" variant="success">
-            LOG IN
+          <FormInput v-model="mobile" placeholder="Mobile" id="mobile" type="tel" number />
+          <FormInput v-model="pw" placeholder="Password" id="password" type="password" />
+          <button
+            className="px-3 py-2 text-medium font-medium text-center w-full  text-white rounded-lg focus:ring-4 focus:outline-none bg-green-600 hover:bg-green-700 focus:ring-green-800"
+            type="submit"
+          >
+            Log In
           </button>
         </form>
       </div>
 
       <button
         @click.prevent="onClickCreateAccount"
-        className="btn create-new-btn vd-hover-pointer"
-        variant="success"
+        className="absolute bottom-6 right-6 px-3 py-2 text-small font-small text-center  text-green-600 rounded-lg focus:ring-2 focus:outline-none bg-green-50  hover:bg-green-100 focus:ring-green-200"
       >
         Create Account
       </button>
     </div>
   </div>
 </template>
-
-<style scoped>
-.form {
-  width: 290px;
-}
-
-.title {
-  color: #fff;
-}
-
-.title1 {
-  font-weight: 900;
-  margin-bottom: 4px;
-  font-size: 25px;
-}
-.title2 {
-  font-size: 21px;
-  margin-bottom: 12px;
-}
-
-.btn {
-  padding: 0px 24px;
-  border-radius: 12px;
-  color: #ffffff;
-  height: 35px;
-  background-color: rgb(5, 199, 5);
-  border: none;
-}
-.btn:hover {
-  background-color: rgb(8, 155, 8);
-}
-
-.submit-btn {
-  width: 100%;
-}
-
-.create-new-btn {
-  position: absolute;
-  bottom: 24px;
-  right: 24px;
-}
-</style>
