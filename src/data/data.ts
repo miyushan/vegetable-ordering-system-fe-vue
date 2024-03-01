@@ -16,10 +16,6 @@ const saveProfile = () => {
   localStorage.setItem(profileKey, JSON.stringify(profile))
 }
 
-const getProfile = () => {
-  localStorage.getItem(profileKey)
-}
-
 export default {
   addUser(user: Omit<User, 'id'>) {
     return new Promise<void>((resolve) => {
@@ -39,7 +35,7 @@ export default {
   getSingleUser(mobile: string, pw: string): Promise<User | null> {
     return new Promise<User | null>((resolve) => {
       setTimeout(() => {
-        const user = userStore.find((user) => user.mobile === mobile)
+        const user = userStore.find((user: User) => user.mobile === mobile)
         if (user && user.pw === pw) {
           resolve(user)
         } else {
@@ -66,10 +62,10 @@ export default {
   },
 
   ////browser level
-  getProfileInfo(): Promise<User> {
-    return new Promise<User>((resolve) => {
+  getProfileInfo(): Promise<User | null> {
+    return new Promise<User | null>((resolve) => {
       setTimeout(() => {
-        const user = getProfile()
+        const user = profile
         resolve(user)
         saveProfile()
       }, 3000)
