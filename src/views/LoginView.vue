@@ -68,11 +68,13 @@ export default {
 </script>
 
 <template>
-  <div class="vd-row">
-    <div class="vd-col vd-col-left">
+  <div class="min-h-screen overflow-hidden grid grid-cols-2">
+    <div
+      class="bg-[url('/images/marisol-benitez-QvkAQTNj4zk-unsplash.jpg')] bg-no-repeat bg-center bg-cover grid place-content-center"
+    >
       <AuthLeft />
     </div>
-    <div class="vd-col vd-col-right">
+    <div class="grid place-content-center bg-[#554c4c]">
       <div>
         <div className="title title1">Welcome to VegiDeals</div>
         <div className="title title2">We make you smart</div>
@@ -101,29 +103,6 @@ export default {
 </template>
 
 <style scoped>
-.vd-row {
-  display: flex;
-}
-.vd-col {
-  width: 50%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.vd-col-left {
-  background-image: url('images/marisol-benitez-QvkAQTNj4zk-unsplash.jpg');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  mix-blend-mode: darken;
-  height: 50vh;
-  overflow: hidden;
-}
-.vd-col-right {
-  background-color: #554c4c;
-}
-
 .form {
   width: 290px;
 }
@@ -140,20 +119,6 @@ export default {
 .title2 {
   font-size: 21px;
   margin-bottom: 12px;
-}
-
-.login-input {
-  border: none;
-  border-radius: 12px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  padding: 10px 12px;
-  margin-bottom: 8px;
-}
-input {
-  width: 264px;
 }
 
 .btn {
