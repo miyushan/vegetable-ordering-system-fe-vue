@@ -92,16 +92,14 @@ export default {
 
 <template>
   <div class="min-h-screen overflow-hidden grid grid-cols-2">
-    <div
-      class="bg-[url('/images/marisol-benitez-QvkAQTNj4zk-unsplash.jpg')] bg-no-repeat bg-center bg-cover grid place-content-center"
-    >
+    <div class="bg-auth bg-no-repeat bg-center bg-cover grid place-content-center">
       <AuthLeft />
     </div>
     <div class="grid place-content-center bg-white">
       <div>
-        <h3 className=" text-gray-700 text-2xl font-bold">Welcome to VegiDeals</h3>
-        <div className="text-gray-600 text-lg mb-3">We make you smart</div>
-        <form className="form" @submit.prevent="onClickCreateAccount">
+        <h3 class="text-gray-700 text-2xl font-bold">Welcome to VegiDeals</h3>
+        <div class="text-gray-600 text-lg mb-3">We make you smart</div>
+        <form class="form" @submit.prevent="onClickCreateAccount">
           <FormInput v-model="firstName" placeholder="First Name" id="firstName" type="text" />
           <FormInput v-model="lastName" placeholder="Last Name" id="lastName" type="text" />
 
@@ -112,7 +110,7 @@ export default {
           <FormInput v-model="pw" placeholder="Password" id="password" type="password" />
 
           <button
-            className="px-3 py-2 text-medium font-medium text-center w-full  text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+            class="px-3 py-2 text-medium font-medium text-center w-full text-white bg-green-700 rounded-lg hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
             type="submit"
           >
             Create Account
@@ -122,7 +120,7 @@ export default {
 
       <button
         @click.prevent="onClickLogin"
-        className="absolute bottom-6 right-6 px-3 py-2 text-medium font-medium text-center  text-green-600 rounded-lg focus:ring-2 focus:outline-none bg-green-50  hover:bg-green-100 focus:ring-green-200"
+        class="absolute bottom-6 right-6 px-3 py-2 text-medium font-medium text-center text-green-600 rounded-lg focus:ring-2 focus:outline-none bg-green-50 hover:bg-green-100 focus:ring-green-200"
       >
         Log In
       </button>

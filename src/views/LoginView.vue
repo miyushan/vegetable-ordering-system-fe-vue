@@ -69,20 +69,18 @@ export default {
 
 <template>
   <div class="min-h-screen overflow-hidden grid grid-cols-2">
-    <div
-      class="bg-[url('/images/marisol-benitez-QvkAQTNj4zk-unsplash.jpg')] bg-no-repeat bg-center bg-cover grid place-content-center"
-    >
+    <div class="bg-auth bg-no-repeat bg-center bg-cover grid place-content-center">
       <AuthLeft />
     </div>
     <div class="grid place-content-center bg-white">
       <div>
-        <h3 className=" text-gray-700 text-2xl font-bold">Welcome to VegiDeals</h3>
-        <div className="text-gray-600 text-lg mb-3">We make you smart</div>
-        <form className="form" @submit.prevent="onClickLogin" method="post">
+        <h3 class="text-gray-700 text-2xl font-bold">Welcome to VegiDeals</h3>
+        <div class="text-gray-600 text-lg mb-3">We make you smart</div>
+        <form class="form" @submit.prevent="onClickLogin" method="post">
           <FormInput v-model="mobile" placeholder="Mobile" id="mobile" type="tel" number />
           <FormInput v-model="pw" placeholder="Password" id="password" type="password" />
           <button
-            className="px-3 py-2 text-medium font-medium text-center w-full  text-white rounded-lg focus:ring-4 focus:outline-none bg-green-600 hover:bg-green-700 focus:ring-green-800"
+            class="px-3 py-2 text-medium font-medium text-center w-full text-white rounded-lg focus:ring-4 focus:outline-none bg-green-600 hover:bg-green-700 focus:ring-green-800"
             type="submit"
           >
             Log In
@@ -92,7 +90,7 @@ export default {
 
       <button
         @click.prevent="onClickCreateAccount"
-        className="absolute bottom-6 right-6 px-3 py-2 text-small font-small text-center  text-green-600 rounded-lg focus:ring-2 focus:outline-none bg-green-50  hover:bg-green-100 focus:ring-green-200"
+        class="absolute bottom-6 right-6 px-3 py-2 text-small font-small text-center text-green-600 rounded-lg focus:ring-2 focus:outline-none bg-green-50 hover:bg-green-100 focus:ring-green-200"
       >
         Create Account
       </button>

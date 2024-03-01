@@ -22,6 +22,16 @@ const router = createRouter({
       component: HomeView
     },
     {
+      path: '/products',
+      name: 'products'
+      // component:
+    },
+    {
+      path: '/cart',
+      name: 'cart'
+      // component:
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
