@@ -7,8 +7,7 @@ import Data from '../data/Data'
 export default {
   data() {
     return {
-      firstName: '',
-      lastName: '',
+      userName: '',
       mobile: '',
       branch: '',
       pw: ''
@@ -30,21 +29,15 @@ export default {
     },
     isProperSubmission() {
       const errors = {
-        firstName: '',
-        lastName: '',
+        userName: '',
         mobile: '',
         branch: '',
         pw: ''
       }
       let errorExist = false
 
-      if (!this.firstName.trim()) {
-        errors.firstName = 'First name is required'
-        errorExist = true
-      }
-
-      if (!this.lastName.trim()) {
-        errors.lastName = 'Last name is required'
+      if (!this.userName.trim()) {
+        errors.userName = 'User name is required'
         errorExist = true
       }
 
@@ -73,8 +66,7 @@ export default {
     async submitAndRedirect() {
       try {
         const user = {
-          firstName: this.firstName,
-          lastName: this.lastName,
+          userName: this.userName,
           mobile: this.mobile,
           branch: this.branch as unknown as Branch,
           pw: this.pw
@@ -92,7 +84,7 @@ export default {
 
 <template>
   <div class="min-h-screen overflow-hidden grid grid-cols-2">
-    <div class="bg-auth bg-no-repeat bg-center bg-cover grid place-content-center">
+    <div class="bg-auth-img bg-no-repeat bg-center bg-cover grid place-content-center">
       <AuthLeft />
     </div>
     <div class="grid place-content-center bg-white">
@@ -100,8 +92,7 @@ export default {
         <h3 class="text-gray-700 text-2xl font-bold">Welcome to VegiDeals</h3>
         <div class="text-gray-600 text-lg mb-3">We make you smart</div>
         <form class="form" @submit.prevent="onClickCreateAccount">
-          <FormInput v-model="firstName" placeholder="First Name" id="firstName" type="text" />
-          <FormInput v-model="lastName" placeholder="Last Name" id="lastName" type="text" />
+          <FormInput v-model="userName" placeholder="User Name" id="userName" type="text" />
 
           <FormInput v-model="mobile" placeholder="Mobile" id="mobile" type="tel" number />
 

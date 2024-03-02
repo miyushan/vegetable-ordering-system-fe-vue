@@ -23,17 +23,3 @@ export default {
     :type="type"
   />
 </template>
-
-<style>
-.vd-input {
-  border: none;
-  border-radius: 12px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  padding: 10px 12px;
-  width: 264px;
-  margin-bottom: 8px;
-}
-</style>

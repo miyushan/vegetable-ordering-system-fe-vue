@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        'auth': "url('/images/marisol-benitez-QvkAQTNj4zk-unsplash.jpg')",
+        'auth-img': "url('/images/marisol-benitez-QvkAQTNj4zk-unsplash.jpg')",
         'cover-img': "url('/images/cover-image.jpg')"
       }
     }

@@ -7,8 +7,7 @@ export enum Branch {
 
 export type User = {
   id: number
-  firstName: string
-  lastName: string
+  userName: string
   mobile: string
   branch: Branch
   pw: string
