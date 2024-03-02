@@ -1,4 +1,4 @@
-<script setup type="ts">
+<script setup lang="ts">
 import { useRouter } from 'vue-router'
 import { ref } from 'vue'
 import AuthLeft from '../components/AuthLeft.vue'
@@ -7,10 +7,10 @@ import Data from '../data/Data'
 
 const router = useRouter()
 
-  const userName = ref('')
-  const mobile = ref('')
-  const branch = ref('')
-  const pw = ref('')
+const userName = ref('')
+const mobile = ref('')
+const branch = ref('')
+const pw = ref('')
 
 const onClickLogin = () => {
   router.push({ path: '/login' })

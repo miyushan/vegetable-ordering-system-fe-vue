@@ -1,6 +1,5 @@
-<script setup type="ts">
-
- const props = defineProps({
+<script setup lang="ts">
+const props = defineProps({
   id: String,
   placeholder: String,
   type: String

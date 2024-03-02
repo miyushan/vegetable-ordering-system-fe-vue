@@ -1,6 +1,6 @@
-<script setup type="ts">
+<script setup lang="ts">
 import Data from '@/data/Data'
-import {useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import AuthLeft from '../components/AuthLeft.vue'
 import FormInput from '../components/FormInput.vue'
 import { ref } from 'vue'
