@@ -65,7 +65,7 @@ const submitAndRedirect = async () => {
 
 <template>
   <div class="min-h-screen overflow-hidden grid grid-cols-2">
-    <div class="bg-auth-img bg-no-repeat bg-center bg-cover grid place-content-center">
+    <div class="bg-img-auth bg-no-repeat bg-center bg-cover grid place-content-center">
       <AuthLeft />
     </div>
     <div class="grid place-content-center bg-white">

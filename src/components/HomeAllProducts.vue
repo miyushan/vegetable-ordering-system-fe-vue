@@ -129,7 +129,7 @@ const products: Product[] = [
 <template>
   <h2 class="text-center text-green-500 text-3xl font-semibold mb-6">Our Products</h2>
   <div
-    class="bg-all-products-img bg-black/[.55] bg-cover bg-no-repeat bg-center bg-blend-overlay py-16"
+    class="bg-img-all-products bg-black/[.55] bg-cover bg-no-repeat bg-center bg-blend-overlay py-16"
   >
     <div class="max-w-screen-xl mx-auto grid grid-cols-5 gap-6">
       <div v-for="product in products" :key="product.id" class="justify-self-center">

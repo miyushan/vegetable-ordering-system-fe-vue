@@ -9,6 +9,6 @@ export default {}
         We are here to<br />ease your works
       </h2>
     </div>
-    <div class="bg-cover-img bg-no-repeat bg-center"></div>
+    <div class="bg-img-cover bg-no-repeat bg-center"></div>
   </div>
 </template>
