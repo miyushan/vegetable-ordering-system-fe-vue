@@ -1,83 +1,79 @@
-<script lang="ts">
-import type { Branch } from '@/models/user'
+<script setup type="ts">
+import { useRouter } from 'vue-router'
+import { reactive } from 'vue'
 import AuthLeft from '../components/AuthLeft.vue'
 import FormInput from '../components/FormInput.vue'
 import Data from '../data/Data'
 
-export default {
-  data() {
-    return {
-      userName: '',
-      mobile: '',
-      branch: '',
-      pw: ''
+const router = useRouter()
+
+const formFields = reactive({
+  userName: '',
+  mobile: '',
+  branch: '',
+  pw: ''
+})
+const onClickLogin = () => {
+  router.push({ path: '/login' })
+}
+const onClickCreateAccount = async () => {
+  if (isProperSubmission()) {
+    try {
+      await submitAndRedirect()
+    } catch (error) {
+      console.log(error)
     }
-  },
-  components: { AuthLeft, FormInput },
-  methods: {
-    onClickLogin() {
-      this.$router.push({ path: '/login' })
-    },
-    async onClickCreateAccount() {
-      if (this.isProperSubmission()) {
-        try {
-          await this.submitAndRedirect()
-        } catch (error) {
-          console.log(error)
-        }
-      }
-    },
-    isProperSubmission() {
-      const errors = {
-        userName: '',
-        mobile: '',
-        branch: '',
-        pw: ''
-      }
-      let errorExist = false
+  }
+}
+const isProperSubmission = () => {
+  const errors = {
+    userName: '',
+    mobile: '',
+    branch: '',
+    pw: ''
+  }
+  let errorExist = false
 
-      if (!this.userName.trim()) {
-        errors.userName = 'User name is required'
-        errorExist = true
-      }
+  if (!formFields.userName.trim()) {
+    errors.userName = 'User name is required'
+    errorExist = true
+  }
 
-      const mobileRegex = /^\d{10}$/
-      if (!this.mobile.match(mobileRegex)) {
-        errors.mobile = 'Mobile number must be 10 digits'
-        errorExist = true
-      }
+  const mobileRegex = /^\d{10}$/
+  if (!formFields.mobile.match(mobileRegex)) {
+    errors.mobile = 'Mobile number must be 10 digits'
+    errorExist = true
+  }
 
-      if (!this.branch.trim()) {
-        errors.branch = 'Branch is required'
-        errorExist = true
-      }
+  if (!formFields.branch.trim()) {
+    errors.branch = 'Branch is required'
+    errorExist = true
+  }
 
-      if (this.pw.length < 8) {
-        errors.pw = 'Password must be at least 8 characters'
-        errorExist = true
-      }
+  if (formFields.pw.length < 8) {
+    errors.pw = 'Password must be at least 8 characters'
+    errorExist = true
+  }
 
-      if (errorExist) {
-        console.log(errors)
-        return false
-      }
-      return true
-    },
-    async submitAndRedirect() {
-      try {
-        const user = {
-          userName: this.userName,
-          mobile: this.mobile,
-          branch: this.branch as unknown as Branch,
-          pw: this.pw
-        }
-        await Data.addUser(user)
-        await this.$router.push({ path: '/login' })
-      } catch (error) {
-        console.log(error)
-        throw error
-      }
+  if (errorExist) {
+    console.log(errors)
+    return false
+  }
+  return true
+}
+const submitAndRedirect = async () => {
+  try {
+    const user = {
+      userName: formFields.userName,
+      mobile: formFields.mobile,
+      branch: formFields.branch,
+      pw: formFields.pw
     }
+    await Data.addUser(user)
+    await router.push({ path: '/login' })
+  } catch (error) {
+    console.log(error)
+    throw error
   }
 }
 </script>

@@ -1,68 +1,64 @@
-<script lang="ts">
+<script setup type="ts">
 import Data from '@/data/Data'
+import {useRouter } from 'vue-router'
 import AuthLeft from '../components/AuthLeft.vue'
 import FormInput from '../components/FormInput.vue'
+import { ref } from 'vue'
 
-export default {
-  data() {
-    return {
-      mobile: '',
-      pw: ''
+const router = useRouter()
+
+const mobile = ref('')
+const pw = ref('')
+
+const onClickLogin = async () => {
+  if (isProperSubmission()) {
+    try {
+      await submitAndRedirect()
+    } catch (error) {
+      console.log(error)
     }
-  },
-  components: { AuthLeft, FormInput },
-  methods: {
-    async onClickLogin() {
-      if (this.isProperSubmission()) {
-        try {
-          await this.submitAndRedirect()
-        } catch (error) {
-          console.log(error)
-        }
-      }
-    },
+  }
+}
+const onClickCreateAccount = () => {
+  router.push({ path: '/create-account' })
+}
+const isProperSubmission = () => {
+  const errors = {
+    mobile: '',
+    pw: ''
+  }
+  let errorExist = false
 
-    onClickCreateAccount() {
-      this.$router.push({ path: '/create-account' })
-    },
+  console.log(mobile.value, pw.value)
 
-    isProperSubmission() {
-      const errors = {
-        mobile: '',
-        pw: ''
-      }
-      let errorExist = false
+  const mobileRegex = /^\d{10}$/
+  if (!mobile.value.match(mobileRegex)) {
+    errors.mobile = 'Mobile number must be 10 digits'
+    errorExist = true
+  }
 
-      const mobileRegex = /^\d{10}$/
-      if (!this.mobile.match(mobileRegex)) {
-        errors.mobile = 'Mobile number must be 10 digits'
-        errorExist = true
-      }
+  if (pw.value.length < 8) {
+    errors.pw = 'Password must be at least 8 characters'
+    errorExist = true
+  }
 
-      if (this.pw.length < 8) {
-        errors.pw = 'Password must be at least 8 characters'
-        errorExist = true
-      }
-
-      if (errorExist) {
-        console.log(errors)
-        return false
-      }
-      return true
-    },
-    async submitAndRedirect() {
-      try {
-        const user = await Data.getSingleUser(this.mobile, this.pw)
-        if (user) {
-          await this.$router.push({ path: '/home' })
-        } else {
-          console.log('Invalid mobile number or password.')
-        }
-      } catch (error) {
-        console.log(error)
-        throw error
-      }
+  if (errorExist) {
+    console.log(errors)
+    return false
+  }
+  return true
+}
+const submitAndRedirect = async () => {
+  try {
+    const user = await Data.getSingleUser(mobile.value, pw.value)
+    if (user) {
+      await router.push({ path: '/home' })
+    } else {
+      console.log('Invalid mobile number or password.')
     }
+  } catch (error) {
+    console.log(error)
+    throw error
   }
 }
 </script>
@@ -77,7 +73,7 @@ export default {
         <h3 class="text-gray-700 text-2xl font-bold">Welcome to VegiDeals</h3>
         <div class="text-gray-600 text-lg mb-3">We make you smart</div>
         <form class="form" @submit.prevent="onClickLogin" method="post">
-          <FormInput v-model="mobile" placeholder="Mobile" id="mobile" type="tel" number />
+          <FormInput v-model="mobile" placeholder="Mobile" id="mobile" type="tel" />
           <FormInput v-model="pw" placeholder="Password" id="password" type="password" />
           <button
             class="px-3 py-2 text-medium font-medium text-center w-full text-white rounded-lg focus:ring-4 focus:outline-none bg-green-600 hover:bg-green-700 focus:ring-green-800"
