@@ -1,18 +1,17 @@
 <script setup type="ts">
 import { useRouter } from 'vue-router'
-import { reactive } from 'vue'
+import { ref } from 'vue'
 import AuthLeft from '../components/AuthLeft.vue'
 import FormInput from '../components/FormInput.vue'
 import Data from '../data/Data'
 
 const router = useRouter()
 
-const formFields = reactive({
-  userName: '',
-  mobile: '',
-  branch: '',
-  pw: ''
-})
+  const userName = ref('')
+  const mobile = ref('')
+  const branch = ref('')
+  const pw = ref('')
+
 const onClickLogin = () => {
   router.push({ path: '/login' })
 }
@@ -34,23 +33,23 @@ const isProperSubmission = () => {
   }
   let errorExist = false
 
-  if (!formFields.userName.trim()) {
+  if (!userName.value.trim()) {
     errors.userName = 'User name is required'
     errorExist = true
   }
 
   const mobileRegex = /^\d{10}$/
-  if (!formFields.mobile.match(mobileRegex)) {
+  if (!mobile.value.match(mobileRegex)) {
     errors.mobile = 'Mobile number must be 10 digits'
     errorExist = true
   }
 
-  if (!formFields.branch.trim()) {
+  if (!branch.value.trim()) {
     errors.branch = 'Branch is required'
     errorExist = true
   }
 
-  if (formFields.pw.length < 8) {
+  if (pw.value.length < 8) {
     errors.pw = 'Password must be at least 8 characters'
     errorExist = true
   }
@@ -64,10 +63,10 @@ const isProperSubmission = () => {
 const submitAndRedirect = async () => {
   try {
     const user = {
-      userName: formFields.userName,
-      mobile: formFields.mobile,
-      branch: formFields.branch,
-      pw: formFields.pw
+      userName: userName.value,
+      mobile: mobile.value,
+      branch: branch.value,
+      pw: pw.value
     }
     await Data.addUser(user)
     await router.push({ path: '/login' })
