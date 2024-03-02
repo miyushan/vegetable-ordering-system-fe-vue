@@ -24,7 +24,7 @@ export default {
 </script>
 
 <template>
-  <nav class=" flex-none bg-gray-100">
+  <nav class="flex-none bg-gray-100 box-shadow-xl fixed top-0 left-0 right-0 z-10 shadow-lg">
     <div class="max-w-screen-xl h-14 flex flex-wrap items-center justify-between mx-auto">
       <a
         href="/home"

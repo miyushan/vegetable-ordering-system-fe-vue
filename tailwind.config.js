@@ -5,7 +5,8 @@ export default {
     extend: {
       backgroundImage: {
         'auth-img': "url('/images/marisol-benitez-QvkAQTNj4zk-unsplash.jpg')",
-        'cover-img': "url('/images/cover-image.jpg')"
+        'cover-img': "url('/images/cover-image.jpg')",
+        'all-products-img': "url('/images/thomas-le-pRJhn4MbsMM-unsplash.jpg')"
       }
     }
   },

@@ -1,6 +1,6 @@
 <script lang="ts">
 import type { PropType } from 'vue/dist/vue.js'
-import OutlinedButton from './ui/button/OutlinedButton.vue'
+import OutlinedButton from './OutlinedButton.vue'
 import type { Product } from '@/models/product'
 
 export default {
@@ -15,7 +15,7 @@ export default {
 </script>
 
 <template>
-  <div class="flex flex-col p-3 w-52 bg-white bg-opacity-85 rounded-md">
+  <div class="flex flex-col p-3 w-52 bg-white bg-opacity-90 rounded-md">
     <img src="/images/product/ginger.png" class="drop-shadow-lg" />
     <h6 class="text-base font-semibold mt-2">{{ product.name }}</h6>
     <div class="flex justify-between mb-2">
