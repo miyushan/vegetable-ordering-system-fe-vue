@@ -7,6 +7,9 @@ export default {
         'img-auth': "url('/images/marisol-benitez-QvkAQTNj4zk-unsplash.jpg')",
         'img-cover': "url('/images/cover-image.jpg')",
         'img-all-products': "url('/images/thomas-le-pRJhn4MbsMM-unsplash.jpg')"
+      },
+      spacing: {
+        128: '32rem'
       }
     }
   },
