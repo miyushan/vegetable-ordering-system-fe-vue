@@ -2,6 +2,7 @@
   <div class="my-48 bg-green-500 relative">
     <img
       src="/images/deliveryBoy.png"
+      alt="Delivery image"
       class="max-h-96 absolute bottom-0 bg-img-deliveryBoy bg-left-bottom bg-no-repeat bg-contain"
     />
 
