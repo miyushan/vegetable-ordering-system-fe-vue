@@ -4,12 +4,13 @@ import { ref } from 'vue'
 import AuthLeft from '../components/AuthLeft.vue'
 import FormInput from '../components/FormInput.vue'
 import Data from '../data/Data'
+import { Branch } from '../models/user'
 
 const router = useRouter()
 
 const userName = ref('')
 const mobile = ref('')
-const branch = ref('')
+const branch = ref<Branch>()
 const pw = ref('')
 
 const onClickLogin = () => {
@@ -44,7 +45,7 @@ const isProperSubmission = () => {
     errorExist = true
   }
 
-  if (!branch.value.trim()) {
+  if (!branch.value) {
     errors.branch = 'Branch is required'
     errorExist = true
   }
@@ -65,7 +66,7 @@ const submitAndRedirect = async () => {
     const user = {
       userName: userName.value,
       mobile: mobile.value,
-      branch: branch.value,
+      branch: branch.value as Branch,
       pw: pw.value
     }
     await Data.addUser(user)

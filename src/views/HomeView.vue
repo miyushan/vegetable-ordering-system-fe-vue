@@ -8,9 +8,10 @@ import AppFooter from '../components/AppFooter.vue'
 </script>
 
 <template>
-  <main>
+  <main class="">
     <div class="min-h-svh flex flex-col">
       <AppHeader />
+      <div class="mt-14"></div>
       <HomeCover />
     </div>
     <HomePopularItems />

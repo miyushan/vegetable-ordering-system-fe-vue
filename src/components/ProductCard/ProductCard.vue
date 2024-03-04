@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { PropType } from 'vue/dist/vue.js'
-import OutlinedButton from './OutlinedButton.vue'
+import AddToCartBtn from './AddToCartBtn.vue'
 import type { Product } from '@/models/product'
 
 const props = defineProps({
@@ -13,12 +13,14 @@ const props = defineProps({
 
 <template>
   <div class="flex flex-col p-3 w-52 bg-white bg-opacity-90 rounded-md">
-    <img src="/images/product/ginger.png" class="drop-shadow-lg" :alt="props.product.name" />
+    <img :src="props.product.img" class="drop-shadow-lg" :alt="props.product.name" />
     <h6 class="text-base font-semibold mt-2">{{ props.product.name }}</h6>
-    <div class="flex justify-between mb-2">
+    <div class="flex justify-between mb-1">
       <p class="text-sm">{{ props.product.weight }} kg</p>
-      <p class="text-sm">Rs.{{ props.product.price }}</p>
     </div>
-    <OutlinedButton name="Add to Cart" />
+    <div class="flex justify-between">
+      <p class="text-base">Rs.{{ props.product.price }}</p>
+      <AddToCartBtn name="Add to Cart" />
+    </div>
   </div>
 </template>

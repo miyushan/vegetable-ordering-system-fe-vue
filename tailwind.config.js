@@ -10,7 +10,8 @@ export default {
         'img-organic-foods': "url('/images/organicFoods.png')"
       },
       spacing: {
-        128: '32rem'
+        128: '32rem',
+        256: '64rem'
       }
     }
   },

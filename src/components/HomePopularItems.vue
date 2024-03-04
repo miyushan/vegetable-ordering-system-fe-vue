@@ -1,40 +1,37 @@
-<script lang="ts">
+<script setup lang="ts">
 import ProductCard from './ProductCard/ProductCard.vue'
 import type { Product } from '@/models/product'
 
-export default {
-  components: { ProductCard },
-  data() {
-    return {
-      popularProducts: [
-        {
-          id: 1,
-          name: 'Carrot',
-          weight: 1,
-          price: 250.5
-        },
-        {
-          id: 2,
-          name: 'Cabbage',
-          weight: 1,
-          price: 154.0
-        },
-        {
-          id: 3,
-          name: 'Cabbage',
-          weight: 1,
-          price: 154.0
-        },
-        {
-          id: 4,
-          name: 'Cabbage',
-          weight: 1,
-          price: 154.0
-        }
-      ] as Product[]
-    }
+const popularProducts: Product[] = [
+  {
+    id: 1,
+    name: 'Carrot',
+    weight: 1,
+    price: 154.0,
+    img: '/images/product/1_carrot.png'
+  },
+  {
+    id: 5,
+    name: 'Potatoes',
+    weight: 1,
+    price: 154.0,
+    img: '/images/product/1_potatoes.png'
+  },
+  {
+    id: 7,
+    name: 'Red Onions',
+    weight: 1,
+    price: 154.0,
+    img: '/images/product/1_Red Onions.png'
+  },
+  {
+    id: 10,
+    name: 'Green Chilies',
+    weight: 1,
+    price: 154.0,
+    img: '/images/product/1_Green Chilies.png'
   }
-}
+]
 </script>
 
 <template>
@@ -49,4 +46,3 @@ export default {
     </div>
   </div>
 </template>
-./ProductCard/ProductCard.vue

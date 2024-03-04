@@ -9,8 +9,8 @@
     <div class="grid grid-cols-2 py-16">
       <div class="col-span-1 grid grid-cols-2"></div>
       <div class="col-span-1 max-w-lg">
-        <h2 class="col-span-2 text-white text-3xl font-semibold mb-6">About Us</h2>
-        <p class="text-base text-gray-50">
+        <h2 class="col-span-2 text-gray-600 text-3xl font-semibold mb-6">About Us</h2>
+        <p class="text-base text-gray-50 leading-relaxed">
           At VegiDeals, we're passionate about bringing delicious meals right to your doorstep with
           just a few clicks. Whether you're craving your favorite comfort food or looking to explore
           new culinary delights, we've got you covered. Our platform is designed to make ordering

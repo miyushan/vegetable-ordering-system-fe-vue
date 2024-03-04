@@ -88,5 +88,3 @@ const links = [
     </div>
   </footer>
 </template>
-import type NavLinkVue from './NavLink.vue';import type { url } from
-'inspector';./Navigation/NavLink.vue

@@ -24,17 +24,19 @@ export default {
 </script>
 
 <template>
-  <nav class="flex-none bg-gray-100 box-shadow-xl fixed top-0 left-0 right-0 z-10 shadow-lg">
-    <div class="max-w-screen-xl h-14 flex flex-wrap items-center justify-between mx-auto">
+  <nav class="bg-gray-100 box-shadow-xl fixed top-0 left-0 right-0 z-10 shadow-lg">
+    <div class="max-w-screen-xl h-14 grid grid-cols-12 items-center justify-between mx-auto">
       <a
         href="/home"
-        class="flex items-center space-x-3 rtl:space-x-reverse text-gray-600 text-2xl font-bold whitespace-nowrap"
+        class="col-span-3 flex items-center text-gray-600 text-2xl font-bold whitespace-nowrap"
       >
         VegiDeals
       </a>
-      <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+
+      <div class="col-span-3 justify-end flex items-center md:order-2">
+        <p class="mr-3">Credits: 50</p>
         <button
-          class="px-3 py-1.5 text-small font-small text-center w-full text-white rounded-lg focus:ring-4 focus:outline-none bg-green-600 hover:bg-green-700 focus:ring-green-800"
+          class="px-3 py-1.5 text-small font-small text-center  text-white rounded-lg focus:ring-4 focus:outline-none bg-green-600 hover:bg-green-700 focus:ring-green-800"
           type="submit"
         >
           Get Free Credits
@@ -65,7 +67,7 @@ export default {
         </button>
       </div>
       <div
-        class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+        class="col-span-6 items-center justify-center hidden md:flex md:w-auto md:order-1"
         id="navbar-cta"
       >
         <ul

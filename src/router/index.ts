@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import LoginView from '../views/LoginView.vue'
+import ProductsView from '../views/ProductsView.vue'
 import AccountCreateView from '../views/AccountCreateView.vue'
+import CartView from '../views/CartView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,14 +26,17 @@ const router = createRouter({
     {
       path: '/products',
       name: 'products',
-      component: HomeView
+      component: ProductsView
     },
     {
       path: '/cart',
       name: 'cart',
-      component: HomeView
+      component: CartView
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  }
 })
 
 export default router
